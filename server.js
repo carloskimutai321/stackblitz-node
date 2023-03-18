@@ -8,8 +8,22 @@ const server = http.createServer((req, res) => {
   // set header content type
   res.setHeader('Content-Type', 'text/html');
 
+  let path = './views/';
+
+  switch (req.url) {
+    case '/':
+      path += 'index.html';
+      break;
+	case '/about':
+		path += 'about';
+		break;
+	  default:
+		path += '404.html'
+		break;
+  }
+
   // send html file
-  fs.readFile('./views/index.html', (err, data) => {
+  fs.readFile(path, (err, data) => {
     if (err) {
       console.log(err);
       res.end();
@@ -24,3 +38,4 @@ const server = http.createServer((req, res) => {
 server.listen(5600, 'localhost', () => {
   console.log('listening for requests on port 3000');
 });
+
