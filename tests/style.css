@@ -103,7 +103,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
  -webkit-background-clip: text; 
    background-clip: text; 
   background-image: url('download\ \(11\).jpeg');
-  font-size: 19.5px;
+  font-size: 19.5px; border;
   transition: 1s;
 }
 
